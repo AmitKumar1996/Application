@@ -6,14 +6,29 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
-public class UserEvent {
+public class UserEvent {  // 1:M
 	
 	// Event: title, start_time, end_time, 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int eventid;
+	@ManyToOne
+	User user;
+	/**
+	 * @return the user
+	 */
+	public User getUser() {
+		return user;
+	}
+	/**
+	 * @param user the user to set
+	 */
+	public void setUser(User user) {
+		this.user = user;
+	}
 	String title;
 	/**
 	 * @return the eventid

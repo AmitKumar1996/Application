@@ -13,6 +13,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int user_id;
+	
 	String name;
 	Date created;
 	Date updated;
